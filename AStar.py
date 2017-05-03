@@ -26,7 +26,7 @@ def G(N):
 def children(p,M):
   c = p[len(p)-1]
   (x,y) = c
-  c1,c2,c3,c4 = (x+1,y), (x-1,y),(x,y+1),(x,y-1)
+  c1,c2,c3,c4 = (x+1,y),(x-1,y),(x,y+1),(x,y-1)
   Res = []
   for e in [c1,c2,c3,c4]:
       if open(e,M):
@@ -47,7 +47,7 @@ def open(e,M):
 def AStar(N):
     open = [N]
     closed = []
-    #invariant: AStar(N) is the shortest distance (in terms of open nodes) from the mouse to the cheese
+    #invariant: AStar(N) is the l
     while (not open == []):
         X = open.pop()
         if (G(X)):
