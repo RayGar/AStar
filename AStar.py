@@ -28,8 +28,9 @@ def children(p,M):
   (x,y) = c
   c1,c2,c3,c4 = (x+1,y), (x-1,y),(x,y+1),(x,y-1)
   Res = []
-  for e in [c1,c2,c3,c4]: if open(e,M): 
-    Res=Res+[p+[e]]
+  for e in [c1,c2,c3,c4]:
+      if open(e,M):
+          Res=Res+[p+[e]]
   return Res
 
 
@@ -50,11 +51,11 @@ def AStar(N):
     while (not open == []):
         X = open.pop()
         if (G(X)):
-            return X
+            return open
         else:
             closed.append(X)
             #insert the children of X not in closed into open
-            #if(not children(X) in open):
-                #open.append(children(X))
+            if(not children(X,M) in open):
+                open.append(children(X,M))
         return None
         
